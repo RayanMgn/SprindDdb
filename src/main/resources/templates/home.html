@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des produits</title>
+
+    <link rel="stylesheet" th:href="@{/css/listProduit.css}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+
+<h1>Liste des produits</h1>
+
+<p>Total des produits : <span th:text="${listProduit.size()}"></span></p>
+
+<table id="produitsTable" class="table-produits">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Type de thé</th>
+        <th>Origine</th>
+        <th>Description</th>
+        <th>Date de réception</th>
+        <th>Quantité</th>
+        <th>Prix (€)</th>
+        <th>Action</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="produit : ${listProduit}">
+        <td th:text="${produit.nom}"></td>
+        <td th:text="${produit.typeThe}"></td>
+        <td th:text="${produit.origin}"></td>
+        <td th:text="${produit.description}"></td>
+        <td th:text="${produit.dateReception}"></td>
+        <td th:text="${produit.quantiteStock}"></td>
+        <td th:text="${produit.prix}"></td>
+        <td><a th:href="@{/produit/update/form/{id}(id=${produit.id})}"
+            class="btn btn-delete"
+            Update> Modifier
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/produit/delete/{id}(id=${produit.id})}"
+               class="btn btn-delete"
+               onclick="return confirm('Voulez-vous vraiment supprimer ce produit ?');">
+               Supprimer
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+<div class="actions">
+    <a th:href="@{/nouveau/produit}">
+        <button type="button">Ajouter un produit</button>
+    </a>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#produitsTable').DataTable({
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.8/i18n/fr-FR.json"
+            },
+            pageLength: 10,
+            lengthMenu: [5, 10, 25, 50],
+            ordering: true,
+            searching: true
+        });
+    });
+</script>
+
+</body>
+</html>

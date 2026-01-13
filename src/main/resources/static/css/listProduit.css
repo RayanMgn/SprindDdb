@@ -1,0 +1,168 @@
+/* ================= BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    padding: 40px;
+}
+
+/* ================= TITRE ================= */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #111827;
+}
+
+/* ================= INFOS ================= */
+p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #4b5563;
+}
+
+/* ================= ACTIONS ================= */
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.actions button {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+}
+
+.actions button:hover {
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+    transform: translateY(-2px);
+}
+
+/* ================= DATATABLE ================= */
+.dataTables_wrapper {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Champ recherche + pagination */
+.dataTables_filter input,
+.dataTables_length select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    outline: none;
+    margin-left: 5px;
+}
+
+/* ================= TABLE ================= */
+.table-produits {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+/* Header */
+.table-produits thead th {
+    background: #6366f1;
+    color: white;
+    padding: 14px 10px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Lignes */
+.table-produits tbody td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Alternance */
+.table-produits tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+/* Hover */
+.table-produits tbody tr:hover {
+    background-color: #eef2ff;
+}
+
+/* ================= PAGINATION ================= */
+.dataTables_paginate .paginate_button {
+    padding: 6px 12px !important;
+    margin: 0 3px;
+    border-radius: 6px !important;
+    border: none !important;
+    background: #e5e7eb !important;
+    color: #111827 !important;
+    transition: 0.2s;
+}
+
+.dataTables_paginate .paginate_button.current {
+    background: #6366f1 !important;
+    color: white !important;
+}
+
+.dataTables_paginate .paginate_button:hover {
+    background: #c7d2fe !important;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .dataTables_wrapper {
+        padding: 15px;
+    }
+
+    .table-produits {
+        font-size: 0.85rem;
+    }
+}
+.btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.25s ease;
+}
+
+/* UPDATE */
+.btn-update {
+    background: #f19063;
+    color: white;
+}
+
+.btn-update:hover {
+    background: #f19063;
+}
+
+/* DELETE */
+.btn-delete {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
